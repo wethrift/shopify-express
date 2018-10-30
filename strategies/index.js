@@ -1,9 +1,9 @@
-const RedisStrategy = require('./RedisStrategy');
+// const RedisStrategy = require('./RedisStrategy');
 const MemoryStrategy = require('./MemoryStrategy');
-const SQLStrategy = require('./SQLStrategy');
+// const SQLStrategy = require('./SQLStrategy');
 
 module.exports = {
-  RedisStrategy,
+  // RedisStrategy,
   MemoryStrategy,
-  SQLStrategy,
+  // SQLStrategy,
 }
