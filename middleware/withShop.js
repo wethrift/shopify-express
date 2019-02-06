@@ -2,10 +2,10 @@ const {TEST_COOKIE_NAME, TOP_LEVEL_OAUTH_COOKIE_NAME} = require('../constants');
 
 module.exports = function withShop({ authBaseUrl } = {}) {
   return function verifyRequest(request, response, next) {
-    const { query: { shop }, session, baseUrl } = request;
-    
+    const { query: { shop, hmac }, session, baseUrl } = request;
+
     // clear old sessions
-    if(shop && session.shop && shop != session.shop){
+    if(hmac || (shop && session.shop && shop != session.shop)){
       request.session.shop = null
       request.session.accessToken = null
     }
